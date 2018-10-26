@@ -56,7 +56,7 @@
     #define NK_IMPLEMENTATION
 #endif
 
-#include "nuklear.h"
+#include "../nuklear/nuklear.h"
 
 
 
