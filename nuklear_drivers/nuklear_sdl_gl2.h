@@ -14,6 +14,10 @@
 #define NK_SDL_GL2_H_
 
 #include <SDL2/SDL.h>
+
+int screenWidth = 0;
+int screenHeight = 0;
+
 NK_API struct nk_context*   nk_sdl_init(SDL_Window *win);
 NK_API void                 nk_sdl_font_stash_begin(struct nk_font_atlas **atlas);
 NK_API void                 nk_sdl_font_stash_end(void);
@@ -73,6 +77,8 @@ nk_sdl_render(enum nk_anti_aliasing AA)
 
     SDL_GetWindowSize(sdl.win, &width, &height);
     SDL_GL_GetDrawableSize(sdl.win, &display_width, &display_height);
+    screenWidth = display_width;
+    screenHeight = display_height;
     scale.x = (float)display_width/(float)width;
     scale.y = (float)display_height/(float)height;
 

@@ -48,6 +48,9 @@ NK_API void nk_gdip_image_free(struct nk_image image);
 #include <stdlib.h>
 #include <malloc.h>
 
+int screenWidth = 0;
+int screenHeight = 0;
+
 /* manually declare everything GDI+ needs, because
    GDI+ headers are not usable from C */
 #define WINGDIPAPI __stdcall
@@ -886,6 +889,8 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
         {
             unsigned int width = LOWORD(lparam);
             unsigned int height = HIWORD(lparam);
+            screenWidth = width;
+            screenHeight = height;
             GdipDeleteGraphics(gdip.window);
             GdipDeleteGraphics(gdip.memory);
             GdipDisposeImage(gdip.bitmap);

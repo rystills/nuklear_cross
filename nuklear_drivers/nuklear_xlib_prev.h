@@ -55,6 +55,9 @@ NK_API void                 nk_xfont_del(Display *dpy, XFont *font);
 #define STB_IMAGE_IMPLEMENTATION
 #include "../stb_image.h"
 
+int screenWidth = 0;
+int screenHeight = 0;
+
 
 #ifndef NK_X11_DOUBLE_CLICK_LO
 #define NK_X11_DOUBLE_CLICK_LO 20
@@ -781,6 +784,8 @@ nk_xlib_handle_event(Display *dpy, int screen, Window win, XEvent *evt)
         XGetWindowAttributes(dpy, win, &attr);
         width = (unsigned int)attr.width;
         height = (unsigned int)attr.height;
+        screenWidth = width;
+        screenHeight = height;
         nk_xsurf_resize(xlib.surf, width, height);
         return 1;
     } else if (evt->type == KeymapNotify) {

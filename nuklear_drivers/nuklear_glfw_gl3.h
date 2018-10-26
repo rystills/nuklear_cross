@@ -15,6 +15,9 @@
 
 #include <GLFW/glfw3.h>
 
+int screenWidth = 0;
+int screenHeight = 0;
+
 enum nk_glfw_init_state{
     NK_GLFW3_DEFAULT=0,
     NK_GLFW3_INSTALL_CALLBACKS
@@ -410,6 +413,8 @@ nk_glfw3_new_frame(void)
     struct GLFWwindow *win = glfw.win;
 
     glfwGetWindowSize(win, &glfw.width, &glfw.height);
+    screenWidth = glfw.width;
+    screenHeight = glfw.height;
     glfwGetFramebufferSize(win, &glfw.display_width, &glfw.display_height);
     glfw.fb_scale.x = (float)glfw.display_width/(float)glfw.width;
     glfw.fb_scale.y = (float)glfw.display_height/(float)glfw.height;

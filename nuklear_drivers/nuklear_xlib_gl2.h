@@ -45,6 +45,9 @@ NK_API void                 nk_x11_shutdown(void);
 
 #include <GL/gl.h>
 
+int screenWidth = 0;
+int screenHeight = 0;
+
 #ifndef NK_X11_DOUBLE_CLICK_LO
 #define NK_X11_DOUBLE_CLICK_LO 20
 #endif
@@ -105,6 +108,8 @@ nk_x11_render(enum nk_anti_aliasing AA, int max_vertex_buffer, int max_element_b
     XGetWindowAttributes(x11.dpy, x11.win, &attr);
     width = attr.width;
     height = attr.height;
+    screenWidth = width;
+    screenHeight = height;
 
     glPushAttrib(GL_ENABLE_BIT|GL_COLOR_BUFFER_BIT|GL_TRANSFORM_BIT);
     glDisable(GL_CULL_FACE);
