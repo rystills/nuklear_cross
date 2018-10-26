@@ -171,7 +171,7 @@ NK_API struct nk_context *nkc_init(struct nkc* nkcHandle, const char* title,
     #endif
     nkcHandle->window = SDL_CreateWindow(title,
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 
-        SDL_WINDOW_OPENGL|SDL_WINDOW_SHOWN|SDL_WINDOW_ALLOW_HIGHDPI);
+        SDL_WINDOW_OPENGL|SDL_WINDOW_SHOWN|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_RESIZABLE);
     nkcHandle->glContext = SDL_GL_CreateContext(nkcHandle->window);
     
     #if !defined(__EMSCRIPTEN__)
