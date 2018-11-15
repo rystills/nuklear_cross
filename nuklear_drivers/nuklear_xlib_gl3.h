@@ -643,6 +643,8 @@ nk_x11_handle_event(XEvent *evt)
         } else {
             if (*code == 'c' && (evt->xkey.state & ControlMask))
                 nk_input_key(ctx, NK_KEY_COPY, down);
+            else if (*code == 'a' && (evt->xkey.state & ControlMask))
+                nk_input_key(ctx, NK_KEY_TEXT_SELECT_ALL, down);
             else if (*code == 'v' && (evt->xkey.state & ControlMask))
                 nk_input_key(ctx, NK_KEY_PASTE, down);
             else if (*code == 'x' && (evt->xkey.state & ControlMask))

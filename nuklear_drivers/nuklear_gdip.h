@@ -984,6 +984,13 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
             nk_input_key(&gdip.ctx, NK_KEY_SCROLL_UP, down);
             return 1;
 
+        case 'A':
+        	if (ctrl) {
+        		nk_input_key(&gdip.ctx,NK_KEY_TEXT_SELECT_ALL, down);
+        		return 1;
+        	}
+        	break;
+
         case 'C':
             if (ctrl) {
                 nk_input_key(&gdip.ctx, NK_KEY_COPY, down);
