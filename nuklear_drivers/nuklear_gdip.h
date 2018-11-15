@@ -954,6 +954,14 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
                 nk_input_key(&gdip.ctx, NK_KEY_RIGHT, down);
             return 1;
 
+        case VK_UP:
+			nk_input_key(&gdip.ctx, NK_KEY_UP, down);
+			return 1;
+
+        case VK_DOWN:
+			nk_input_key(&gdip.ctx, NK_KEY_DOWN, down);
+			return 1;
+
         case VK_BACK:
             nk_input_key(&gdip.ctx, NK_KEY_BACKSPACE, down);
             return 1;
