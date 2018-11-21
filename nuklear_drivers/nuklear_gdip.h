@@ -991,6 +991,20 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
         	}
         	break;
 
+        case 'S':
+			if (ctrl) {
+				nk_input_key(&gdip.ctx,NK_KEY_SAVE, down);
+				return 1;
+			}
+			break;
+
+        case 'O':
+			if (ctrl) {
+				nk_input_key(&gdip.ctx,NK_KEY_OPEN, down);
+				return 1;
+			}
+			break;
+
         case 'C':
             if (ctrl) {
                 nk_input_key(&gdip.ctx, NK_KEY_COPY, down);
