@@ -190,8 +190,10 @@ NK_API struct nk_context *nkc_init(struct nkc* nkcHandle, const char* title,
     #endif /* OpenGL version */
     nkcHandle->ctx = nk_sdl_init(nkcHandle->window);
     /* load default font */
-    nk_sdl_font_stash_begin(&atlas);
-    nk_sdl_font_stash_end();
+    #ifdef NK_INCLUDE_DEFAULT_FONT
+        nk_sdl_font_stash_begin(&atlas);
+        nk_sdl_font_stash_end();
+    #endif
     glEnable(GL_TEXTURE_2D);
     
     #if defined(__EMSCRIPTEN__)

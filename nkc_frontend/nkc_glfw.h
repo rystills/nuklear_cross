@@ -199,9 +199,11 @@ NK_API struct nk_context *nkc_init(struct nkc* nkcHandle, const char* title,
     #endif
     
     nkcHandle->ctx = nk_glfw3_init(nkcHandle->window, NK_GLFW3_INSTALL_CALLBACKS);
-    
-    nk_glfw3_font_stash_begin(&atlas);
-    nk_glfw3_font_stash_end();
+    /* load default font */
+    #ifdef NK_INCLUDE_DEFAULT_FONT
+        nk_glfw3_font_stash_begin(&atlas);
+        nk_glfw3_font_stash_end();
+    #endif
     
     #if defined(__EMSCRIPTEN__)
     if( windowMode == NKC_WIN_FULLSCREEN ) nkc_fullscreen_enter(nkcHandle);

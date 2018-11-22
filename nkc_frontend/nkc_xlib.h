@@ -341,8 +341,10 @@ NK_API struct nk_context *nkc_init(struct nkc* nkcHandle, const char* title,
     /* Load Fonts: if none of these are loaded a default font will be used  */
     {
         struct nk_font_atlas *atlas;
-        nk_x11_font_stash_begin(&atlas);
-        nk_x11_font_stash_end();
+        #ifdef NK_INCLUDE_DEFAULT_FONT
+            nk_x11_font_stash_begin(&atlas);
+            nk_x11_font_stash_end();
+        #endif
     }
     glEnable(GL_TEXTURE_2D);
     nkcHandle->nkcInited = NKC_INITED;
