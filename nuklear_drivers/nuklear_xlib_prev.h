@@ -716,6 +716,8 @@ nk_xlib_handle_event(Display *dpy, int screen, Window win, XEvent *evt)
                 nk_input_key(ctx, NK_KEY_COPY, down);
             else if (*code == 's' && (evt->xkey.state & ControlMask))
 				nk_input_key(ctx, NK_KEY_SAVE, down);
+            else if (*code == 'r' && (evt->xkey.state & ControlMask))
+            	nk_input_key(ctx, NK_KEY_RUN, down);
             else if (*code == 'o' && (evt->xkey.state & ControlMask))
 				nk_input_key(ctx, NK_KEY_OPEN, down);
             else if (*code == 'a' && (evt->xkey.state & ControlMask))

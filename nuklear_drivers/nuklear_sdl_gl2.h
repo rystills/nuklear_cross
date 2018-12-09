@@ -284,6 +284,8 @@ nk_sdl_handle_event(SDL_Event *evt)
             nk_input_key(ctx, NK_KEY_TEXT_SELECT_ALL, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
         else if (sym == SDLK_s)
         	nk_input_key(ctx, NK_KEY_SAVE, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
+        else if (sym == SDLK_r)
+        	nk_input_key(ctx, NK_KEY_RUN, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
         else if (sym == SDLK_o)
         	nk_input_key(ctx, NK_KEY_OPEN, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
         else if (sym == SDLK_c)
