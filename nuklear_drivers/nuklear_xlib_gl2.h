@@ -288,7 +288,7 @@ nk_x11_handle_event(XEvent *evt)
                 nk_input_key(ctx, NK_KEY_CUT, down);
             else if (*code == 'z' && (evt->xkey.state & ControlMask))
                 nk_input_key(ctx, NK_KEY_TEXT_UNDO, down);
-            else if (*code == 'r' && (evt->xkey.state & ControlMask))
+            else if (*code == 'y' && (evt->xkey.state & ControlMask))
                 nk_input_key(ctx, NK_KEY_TEXT_REDO, down);
             else if (*code == XK_Left && (evt->xkey.state & ControlMask))
                 nk_input_key(ctx, NK_KEY_TEXT_WORD_LEFT, down);

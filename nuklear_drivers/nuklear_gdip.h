@@ -1040,7 +1040,7 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
             }
             break;
 
-        case 'R':
+        case 'Y':
             if (ctrl) {
                 nk_input_key(&gdip.ctx, NK_KEY_TEXT_REDO, down);
                 return 1;

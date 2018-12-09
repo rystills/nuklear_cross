@@ -278,7 +278,7 @@ nk_sdl_handle_event(SDL_Event *evt)
             nk_input_key(ctx, NK_KEY_SCROLL_UP, down);
         } else if (sym == SDLK_z)
             nk_input_key(ctx, NK_KEY_TEXT_UNDO, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
-        else if (sym == SDLK_r)
+        else if (sym == SDLK_y)
             nk_input_key(ctx, NK_KEY_TEXT_REDO, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
         else if (sym == SDLK_a)
             nk_input_key(ctx, NK_KEY_TEXT_SELECT_ALL, down && (state[SDL_SCANCODE_LCTRL] || state[SDL_SCANCODE_RCTRL]));
