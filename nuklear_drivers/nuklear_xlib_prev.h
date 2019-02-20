@@ -699,8 +699,8 @@ nk_xlib_handle_event(Display *dpy, int screen, Window win, XEvent *evt)
         else if (*code == XK_Tab)       nk_input_key(ctx, NK_KEY_TAB, down);
         else if (*code == XK_Left)      nk_input_key(ctx, NK_KEY_LEFT, down);
         else if (*code == XK_Right)     nk_input_key(ctx, NK_KEY_RIGHT, down);
-        else if (*code == XK_Up)        nk_input_key(ctx, NK_KEY_UP, down);
-        else if (*code == XK_Down)      nk_input_key(ctx, NK_KEY_DOWN, down);
+        else if (*code == XK_Up)        nk_input_key(ctx, (evt->xkey.state & ControlMask) ? NK_KEY_CTRL_UP : NK_KEY_UP, down);
+        else if (*code == XK_Down)      nk_input_key(ctx, (evt->xkey.state & ControlMask) ? NK_KEY_CTRL_DOWN : NK_KEY_DOWN, down);
         else if (*code == XK_BackSpace) nk_input_key(ctx, NK_KEY_BACKSPACE, down);
         else if (*code == XK_Escape)    nk_input_key(ctx, NK_KEY_TEXT_RESET_MODE, down);
         else if (*code == XK_Page_Up)   nk_input_key(ctx, NK_KEY_SCROLL_UP, down);

@@ -955,11 +955,11 @@ nk_gdip_handle_event(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
             return 1;
 
         case VK_UP:
-			nk_input_key(&gdip.ctx, NK_KEY_UP, down);
+			nk_input_key(&gdip.ctx, ctrl ? NK_KEY_CTRL_UP : NK_KEY_UP, down);
 			return 1;
 
         case VK_DOWN:
-			nk_input_key(&gdip.ctx, NK_KEY_DOWN, down);
+			nk_input_key(&gdip.ctx, ctrl ? NK_KEY_CTRL_DOWN : NK_KEY_DOWN, down);
 			return 1;
 
         case VK_BACK:
